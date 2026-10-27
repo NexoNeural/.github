@@ -1,0 +1,22 @@
+# Set estándar de etiquetas. Formato: nombre|color|descripción
+# El color va en hexadecimal, sin almohadilla. La descripción admite hasta 100 caracteres.
+#
+# Tipo: qué es el ticket (cada ticket lleva exactamente uno)
+tipo:error|D73A4A|Algo falla
+tipo:tarea|1D76DB|Un trabajo concreto
+tipo:epica|6F42C1|Objetivo grande que se divide en tareas (no entra en sprint)
+tipo:cambio-de-alcance|F66A0A|Petición con el sprint empezado o fuera de lo acordado
+tipo:investigacion|7FD99A|Estudiar antes de hacer, para decidir con datos
+tipo:documentacion|17A2B8|Escribir o actualizar documentación
+#
+# Control: qué le falta al ticket (se quita al resolverlo)
+necesita-estimacion|FBCA04|Aún sin horas estimadas
+necesita-asignacion|FBCA04|Aún sin responsable
+necesita-desglose|FBCA04|Épica aún sin dividir en tareas
+necesita-decision|FBCA04|Cambio pendiente de decidir
+necesita-aclaracion|FBCA04|Ticket con información insuficiente
+#
+# Estado: situación excepcional o cómo terminó
+fuera-de-sprint|E83E8C|Trabajo aprobado que entra con el sprint ya empezado
+no-se-hara|586069|Rechazado o descartado
+duplicado|CFD3D7|Ya existe otro ticket igual

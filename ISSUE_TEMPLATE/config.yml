@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Normas de trabajo
+    url: https://github.com/NexoNeural/.github/blob/main/CONTRIBUTING.md
+    about: Lee cómo se piden, refinan y entregan las tareas antes de crear un ticket.

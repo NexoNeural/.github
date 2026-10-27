@@ -1,0 +1,94 @@
+name: Épica
+description: "Proponer un objetivo grande que se dividirá en tareas. La épica es un contenedor: no entra en un sprint, solo sus tareas."
+title: "[Cliente/Módulo] "
+labels:
+  - "tipo:epica"
+  - "necesita-desglose"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Proponer una épica
+        Una épica es un **objetivo grande** que el cliente entiende y que se divide después en tareas. No se trabaja directamente ni entra en un sprint: solo lo hacen sus tareas.
+
+        Rellena solo lo que se te pide. **No hace falta indicar horas, responsable ni tareas hijas**: se deciden después, en el refinamiento del equipo.
+
+        **Título**: usa el formato `[Cliente/Módulo] Resumen del objetivo`. Ejemplo: `[Cliente1/Informes] Panel de gastos mensual`.
+
+  - type: input
+    id: pedido_por
+    attributes:
+      label: Pedido por
+      description: Quién lo pide y por qué canal. Déjalo escrito para que quede constancia.
+      placeholder: "Ejemplo: Cliente, en la reunión de arranque / PO, por correo del 12-nov"
+    validations:
+      required: true
+
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      description: Qué consigue el cliente cuando la épica esté terminada.
+      placeholder: "Ejemplo: Ver de un vistazo cuánto se gasta cada mes por categoría."
+    validations:
+      required: true
+
+  - type: textarea
+    id: incluye
+    attributes:
+      label: Qué incluye
+      description: El alcance acordado, es decir, lo que se va a hacer.
+      placeholder: "Ejemplo: Tabla por mes, filtro por categoría y exportar a hoja de cálculo."
+    validations:
+      required: true
+
+  - type: textarea
+    id: no_incluye
+    attributes:
+      label: Qué NO incluye
+      description: Lo que se deja fuera a propósito. Si una petición posterior cae aquí, se trata como un cambio de alcance.
+      placeholder: "Ejemplo: Comparar con años anteriores; gráficos."
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación (se da por terminada cuando…)
+      description: Cómo se comprueba que la épica está terminada. Comprobaciones que se pueden verificar con un sí o un no.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      description: Prioridad que se solicita. La confirma el responsable de producto del proyecto en el refinamiento.
+      options:
+        - Alta
+        - Media
+        - Baja
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: fecha_limite
+    attributes:
+      label: Fecha límite (opcional)
+      description: Solo si existe una fecha real. Formato AAAA-MM-DD. Sirve para ubicar la épica en el Roadmap.
+      placeholder: "2026-12-15"
+    validations:
+      required: false
+
+  - type: textarea
+    id: supuestos
+    attributes:
+      label: Supuestos, dudas o bloqueantes externos (opcional)
+      description: Lo que está por confirmar o de lo que depende la épica (por ejemplo, algo que debe entregar el cliente), para que nadie lo dé por cerrado.
+      placeholder: "Ejemplo: Falta confirmar de dónde salen los datos. Depende de que el cliente entregue el acceso."
+    validations:
+      required: false

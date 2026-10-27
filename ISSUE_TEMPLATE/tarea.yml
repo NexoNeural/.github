@@ -1,0 +1,75 @@
+name: Tarea
+description: Proponer un trabajo nuevo. Entra en la bandeja de entrada y se refina en equipo antes de ir a un sprint.
+title: "[Cliente/Módulo] "
+labels:
+  - "tipo:tarea"
+  - "necesita-estimacion"
+  - "necesita-asignacion"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Proponer una tarea
+        Rellena solo lo que se te pide. **No hace falta indicar horas, responsable ni dependencias**: eso se decide después, en el refinamiento del equipo.
+
+        **Título**: usa el formato `[Cliente/Módulo] Resumen corto`. Ejemplo: `[Cliente1/Tabla-Gastos] Mostrar tabla de gastos por mes`.
+
+  - type: input
+    id: pedido_por
+    attributes:
+      label: Pedido por
+      description: Quién lo pide y por qué canal. Déjalo escrito para que quede constancia.
+      placeholder: "Ejemplo: Cliente, en la reunión del viernes / PO,por correo del 12-nov"
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Motivo
+      description: Para qué se necesita. El problema o la necesidad de negocio detrás de la tarea.
+      placeholder: "Ejemplo: El cliente quiere ver los gastos por mes en la demo del día 10."
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción
+      description: Qué hay que hacer. Concreto y sin ambigüedades; si algo está por confirmar, dilo.
+      placeholder: "Ejemplo: Mostrar una tabla con el total de gastos por categoría y por mes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación (se da por terminada cuando…)
+      description: Lista de comprobaciones que se pueden verificar con un sí o un no.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      description: Prioridad que se solicita. La confirma el responsable de producto del proyecto en el refinamiento.
+      options:
+        - Alta
+        - Media
+        - Baja
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: fecha_limite
+    attributes:
+      label: Fecha límite (opcional)
+      description: Solo si existe una fecha real. Formato AAAA-MM-DD. Sirve para ubicar la tarea en el Roadmap.
+      placeholder: "2026-11-10"
+    validations:
+      required: false
