@@ -21,7 +21,7 @@ Closes #
 
 ## Horas dedicadas
 
-<!-- Horas reales dedicadas a este cambio. Quien revisa las copia al campo «Horas reales» del Project al fusionar. -->
+<!-- Horas reales dedicadas a este cambio. Quien revisa las copia al campo «Horas reales» del ticket al fusionar. -->
 
 ## Notas para quien revisa
 

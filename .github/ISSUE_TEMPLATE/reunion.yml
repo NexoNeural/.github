@@ -1,0 +1,32 @@
+name: Reunión
+description: Reunión o ceremonia del equipo o con el cliente.
+type: Reunión
+title: "[Cliente/Gestión] "
+labels:
+  - "necesita-estimacion"
+  - "necesita-asignacion"
+body:
+  - type: textarea
+    id: que_se_trata
+    attributes:
+      label: Qué se trata
+      description: Tema y orden del día, en pocas frases.
+    validations:
+      required: true
+  - type: textarea
+    id: participan
+    attributes:
+      label: Participan
+      description: Quién asiste.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Se da por terminada cuando…
+      description: Qué debe quedar registrado, por ejemplo acuerdos o acta.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
