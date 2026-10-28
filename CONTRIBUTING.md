@@ -132,7 +132,7 @@ Un **Pull Request** (PR) es una propuesta de cambios en el código que otra pers
 
 **El camino de un cambio**
 1. Hay un ticket refinado y dentro del sprint.
-2. Se crea una rama propia desde `desarrollo`.
+2. Se crea una rama propia desde `desarrollo`, enlazada al ticket: `gh issue develop NUMERO --base desarrollo --name tipo/NUMERO-descripcion`. Así la rama aparece en la sección *Development* del ticket y el nombre sale siempre con el número correcto.
 3. Se trabaja y se suben los cambios **a esa rama**.
 4. Se abre un PR hacia `desarrollo`, con la plantilla rellena y `Closes #NUMERO` para enlazar el ticket.
 5. **Otra persona** revisa el PR.
@@ -147,7 +147,7 @@ Un **Pull Request** (PR) es una propuesta de cambios en el código que otra pers
 - Todo PR enlaza su ticket con `Closes #NUMERO` y trae la plantilla rellena, incluidas las horas dedicadas y los pasos de despliegue o configuración, o «Ninguno».
 - Un ticket está «Hecho» cuando cumple las condiciones de la sección 8.
 
-**Uso de IA y agentes.** Toda IA debe crear una rama propia, rellenar la plantilla `PULL_REQUEST_TEMPLATE.md` y abrir el PR con `gh pr create`, sin hacer push directo a `desarrollo` ni a `main`.
+**Uso de IA y agentes.** Toda IA debe crear una rama propia desde el ticket (con `gh issue develop`), rellenar la plantilla `PULL_REQUEST_TEMPLATE.md` y abrir el PR con `gh pr create`, sin hacer push directo a `desarrollo` ni a `main`.
 
 **Una nota sobre los candados.** En repositorios privados con el plan Free, GitHub no permite bloquear técnicamente el `push` a una rama ni obligar a que un PR tenga una revisión aprobada. Estas reglas se cumplen por acuerdo, y el rastro de tickets y PR permite comprobarlas.
 
@@ -203,7 +203,7 @@ Cualquier persona puede usar una IA para redactar tickets o poblar el backlog. E
 7. **Sin datos sensibles.** No incluir en los tickets ni en los textos que se pasen a la IA contraseñas, claves, datos personales ni datos de clientes.
 8. **Revisión humana antes de crear.** Una persona lee y corrige el borrador antes de crear el issue.
 9. **Refinamiento obligatorio.** Un issue generado con IA pasa por el refinamiento técnico como cualquier otro. Hasta entonces no puede entrar en un sprint.
-10. **Si la IA también escribe código**, se aplica la sección 6: rama propia, plantilla de PR rellena y PR con `gh pr create`, sin push directo.
+10. **Si la IA también escribe código**, se aplica la sección 6: rama propia creada desde el ticket con `gh issue develop`, plantilla de PR rellena y PR con `gh pr create`, sin push directo.
 
 Ejemplo de instrucción para una IA:
 
