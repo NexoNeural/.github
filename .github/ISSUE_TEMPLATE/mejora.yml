@@ -1,0 +1,32 @@
+name: Mejora
+description: Funcionalidad nueva o cambio de algo que ya existe.
+type: Mejora
+title: "[Cliente/Módulo] "
+labels:
+  - "necesita-estimacion"
+  - "necesita-asignacion"
+body:
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Qué se quiere
+      description: La mejora, en pocas frases.
+    validations:
+      required: true
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Para qué sirve
+      description: Qué problema resuelve o qué valor aporta.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Se da por terminada cuando…
+      description: Comprobaciones que se responden con un sí o un no.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true

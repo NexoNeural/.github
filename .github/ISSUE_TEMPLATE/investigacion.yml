@@ -1,0 +1,32 @@
+name: Investigación
+description: Estudio o prueba para decidir algo, sin entregable de código.
+type: Investigación
+title: "[Cliente/Módulo] "
+labels:
+  - "necesita-estimacion"
+  - "necesita-asignacion"
+body:
+  - type: textarea
+    id: pregunta
+    attributes:
+      label: Qué hay que averiguar
+      description: La pregunta o la decisión que queda abierta.
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Cómo se va a averiguar
+      description: Qué se probará o se revisará.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Se da por terminada cuando…
+      description: Qué se entrega, por ejemplo una conclusión escrita o una recomendación.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true

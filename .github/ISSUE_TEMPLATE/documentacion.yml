@@ -1,0 +1,32 @@
+name: Documentación
+description: Redactar o corregir un documento.
+type: Documentación
+title: "[Cliente/Módulo] "
+labels:
+  - "necesita-estimacion"
+  - "necesita-asignacion"
+body:
+  - type: textarea
+    id: documento
+    attributes:
+      label: Qué documento
+      description: Nombre o enlace.
+    validations:
+      required: true
+  - type: textarea
+    id: cambio
+    attributes:
+      label: Qué hay que redactar o corregir
+      description: El cambio, en pocas frases.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Se da por terminada cuando…
+      description: Comprobaciones que se responden con un sí o un no.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true

@@ -1,79 +1,28 @@
 name: Cambio de alcance
-description: Pedir algo que llega con el sprint ya empezado, o que contradice lo acordado en una épica. Queda registrado y pendiente de decisión.
-title: "[Cliente/Módulo] Cambio: "
+description: Una petición que llega con el sprint ya empezado. Queda pendiente de decisión.
+type: Cambio de alcance
+title: "[Cliente/Módulo] "
 labels:
-  - "tipo:cambio-de-alcance"
   - "necesita-decision"
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Pedir un cambio de alcance
-        Un sprint tiene una **capacidad fija**: si entra algo nuevo, algo se retrasa, se deja fuera o se compensa de otra forma. Este formulario sirve para que el cambio quede **escrito y justificado**.
-
-        Úsalo cuando:
-        - la petición llega con el sprint ya empezado, o
-        - la petición contradice el apartado **«Qué NO incluye»** de una épica (en este caso es **obligatorio**), o
-        - se pide sustituir trabajo del sprint por otro.
-
-        **No hace falta indicar horas ni responsable**: se deciden después. Este mismo ticket irá evolucionando; no se crea otro.
-
-        **Título**: usa el formato `[Cliente/Módulo] Cambio: resumen`. Ejemplo: `[Cliente1/Informes] Cambio: añadir columna de proveedor`.
-
-  - type: input
-    id: pedido_por
-    attributes:
-      label: Pedido por
-      description: Quién lo pide y por qué canal. Déjalo escrito para que quede constancia.
-      placeholder: "Ejemplo: Cliente, por llamada del martes / PO, por correo del 12-nov"
-    validations:
-      required: true
-
-  - type: dropdown
-    id: tipo_cambio
-    attributes:
-      label: Tipo de cambio
-      description: Elige la opción que mejor lo describe.
-      options:
-        - Tarea nueva a mitad de sprint
-        - Ampliación de algo ya acordado
-        - Cambio de prioridad (sustituir trabajo del sprint)
-    validations:
-      required: true
-
   - type: textarea
     id: pide
     attributes:
       label: Qué se pide
       description: El cambio, de forma concreta.
-      placeholder: "Ejemplo: Añadir una columna con el proveedor a la tabla de gastos."
     validations:
       required: true
-
   - type: textarea
     id: urgencia
     attributes:
       label: Por qué no puede esperar al siguiente sprint
-      description: Justifica la urgencia. Si puede esperar, es mejor dejarlo como una tarea normal.
-      placeholder: "Ejemplo: El cliente lo enseña en una reunión el jueves."
+      description: Qué pasa si se deja para después.
     validations:
       required: true
-
-  - type: input
-    id: afectados
-    attributes:
-      label: Elementos afectados (opcional)
-      description: Épicas, tareas o errores relacionados, con su número.
-      placeholder: "Ejemplo: #41, #57"
-    validations:
-      required: false
-
   - type: textarea
     id: compensacion
     attributes:
-      label: Qué se retrasa, se deja fuera o cómo se compensa
-      description: |
-        Cómo se hace hueco al cambio. No siempre hay que sacar una tarea entera. Vale cualquier alternativa acordada, siempre que quede por escrito y justificada. Si no lo sabes, escribe «lo decide el Scrum Master».
-      placeholder: "Ejemplo: Se aplaza la exportación a hoja de cálculo / Asumido como hora extra de esta semana / Se descuenta 1 hora de capacidad en el planning del siguiente sprint."
+      label: Qué se retrasa o se deja fuera
+      description: Cómo se compensa dentro del sprint actual.
     validations:
       required: true

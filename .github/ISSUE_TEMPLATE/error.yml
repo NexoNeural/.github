@@ -1,102 +1,33 @@
 name: Error
-description: Avisar de que algo falla. Entra en la bandeja de entrada y se refina en equipo antes de ir a un sprint.
+description: Algo que no funciona como debería.
+type: Error
 title: "[Cliente/Módulo] "
 labels:
-  - "tipo:error"
   - "necesita-estimacion"
   - "necesita-asignacion"
 body:
-  - type: markdown
+  - type: textarea
+    id: que_pasa
     attributes:
-      value: |
-        ## Avisar de un error
-        Rellena solo lo que se te pide. **No hace falta indicar horas, responsable ni dependencias**: eso se decide después, en el refinamiento del equipo.
-
-        **Título**: usa el formato `[Cliente/Módulo] Qué falla`. Ejemplo: `[Cliente1/Tabla-Gastos] La tabla no carga con más de 500 filas`.
-
-        **Importante:** no pegues contraseñas, claves ni datos de clientes en este formulario.
-
-  - type: input
-    id: reportado_por
-    attributes:
-      label: Reportado por
-      description: Quién detectó el error y por qué canal. Déjalo escrito para que quede constancia.
-      placeholder: "Ejemplo: Cliente, por correo del lunes / Equipo, en pruebas"
+      label: Qué pasa
+      description: Qué ves y dónde ocurre. No pegues contraseñas, claves ni datos de clientes.
     validations:
       required: true
-
-  - type: dropdown
-    id: entorno
-    attributes:
-      label: Dónde ocurre
-      description: El entorno en el que se ve el error. Cambia la urgencia.
-      options:
-        - Producción
-        - Desarrollo
-        - Pruebas
-        - Local
-    validations:
-      required: true
-
   - type: textarea
     id: pasos
     attributes:
-      label: Pasos para reproducirlo
-      description: Lista numerada para poder ver el error uno mismo. Sin esto casi no se puede arreglar.
+      label: Cómo reproducirlo
+      description: Pasos para que otra persona lo vea.
       value: |
         1.
         2.
         3.
     validations:
       required: true
-
   - type: textarea
     id: esperado
     attributes:
       label: Qué debería pasar
-      description: El comportamiento correcto.
-      placeholder: "Ejemplo: La tabla se carga en menos de 2 segundos."
+      description: El resultado correcto.
     validations:
       required: true
-
-  - type: textarea
-    id: real
-    attributes:
-      label: Qué pasa en realidad
-      description: El error observado. Si hay un mensaje, cópialo tal cual (sin datos sensibles).
-      placeholder: "Ejemplo: La pantalla se queda en blanco."
-    validations:
-      required: true
-
-  - type: dropdown
-    id: gravedad
-    attributes:
-      label: Gravedad
-      description: Cuánto daña el error. No es lo mismo que la prioridad, que decide el responsable de producto en el refinamiento.
-      options:
-        - Crítica (servicio caído o datos en riesgo)
-        - Alta (una función principal no funciona)
-        - Media (hay una alternativa para seguir trabajando)
-        - Baja (un detalle menor)
-    validations:
-      required: true
-
-  - type: dropdown
-    id: frecuencia
-    attributes:
-      label: Frecuencia
-      description: Con qué frecuencia ocurre.
-      options:
-        - Siempre
-        - A veces
-        - Una sola vez
-    validations:
-      required: true
-
-  - type: textarea
-    id: evidencias
-    attributes:
-      label: Evidencias (opcional)
-      description: Capturas, mensajes o enlaces que ayuden. No incluyas contraseñas, claves ni datos de clientes.
-    validations:
-      required: false
