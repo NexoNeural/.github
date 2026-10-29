@@ -2,8 +2,6 @@
 
 Este documento se aplica a todos los repositorios de la organización. Resume cómo se piden, preparan y entregan las tareas. Está pensado para que cualquiera, técnico o no, sepa qué hacer.
 
-> **Estado:** primera versión, pendiente de revisión antes de publicarse.
-
 ## 1. Cómo pedir un trabajo
 
 Todo trabajo empieza como un **issue** (un ticket en GitHub). Si no hay issue, el trabajo no existe en el plan.
@@ -81,7 +79,7 @@ Las tareas, mejoras, errores, investigaciones, documentación y reuniones nacen 
 **Reglas de uso**
 - Cada ticket tiene **exactamente un tipo** (Tarea, Error, Mejora, Épica, Investigación, Documentación, Reunión o Cambio de alcance).
 - Las etiquetas `necesita-` son pendientes: se quitan al resolverlos.
-- **El tipo, la prioridad, las fechas, el esfuerzo y las horas no son etiquetas**: son campos del propio ticket. La **fase** es el milestone, el **responsable** es el asignado y el **sprint** es la iteración del Project.
+- **El tipo, la prioridad, las fechas, el esfuerzo y las horas no son etiquetas**: son campos del propio ticket. La **fase** es el milestone (su nombre lleva siempre como prefijo, entre corchetes, el nombre del repositorio, p. ej. `[NOMBRE-DEL-REPO] Fase 1`), el **responsable** es el asignado y el **sprint** es la iteración del Project.
 - Las etiquetas estándar se crean en cada repositorio con el script `etiquetas/sincronizar-etiquetas.sh` de este repo. Se ejecuta a mano y nunca borra etiquetas.
 - **Etiquetas por área** (por ejemplo `area:frontend`, `area:backend` o `area:database`): no forman parte del set estándar, para no recargar los proyectos pequeños. Se pueden añadir manualmente en los repositorios específicos que las necesiten.
 
@@ -239,3 +237,31 @@ Marca como «por confirmar» todo lo que no sepas.
 Contexto: <pega aquí lo que se necesita, sin datos sensibles>
 ```
 
+
+## 10. El tablero del proyecto
+
+Cada proyecto tiene un **tablero** (un *Project* de la organización) con el mismo nombre que su repositorio. Además hay un tablero **general** con el avance de todos los proyectos, pensado para dirección. Los tableros se crean a partir de una plantilla común.
+
+**Estados de un ticket en el tablero**
+
+| Estado | Significa |
+|---|---|
+| **Bandeja de entrada** | Ticket nuevo, sin refinar |
+| **Backlog refinado** | Con horas estimadas (ver criterio más abajo) |
+| **En sprint** | Comprometido para el sprint actual |
+| **En curso** | Alguien trabaja en él |
+| **En revisión** | PR abierto, esperando visto bueno |
+| **Hecho** | Integrado en `desarrollo` (sección 8) |
+| **Entregado** | Ya en `main` (producción) |
+
+**Criterio de «refinado».** Una tarea está en «Backlog refinado» cuando tiene **horas estimadas**. Una épica lo está cuando tiene sub-issues y todos tienen horas estimadas. Para entrar en un sprint la tarea necesita además responsable, criterios de aceptación y el visto bueno del Scrum Master (sección 2). El estado lo cambia el Scrum Master a mano.
+
+**Sprints.** Son una iteración de una semana (lunes a domingo). «En sprint» solo contiene los tickets de la semana en curso; el resto espera en «Backlog refinado».
+
+**Vistas del tablero de proyecto:** *Backlog* (agrupado por épica, con las horas de cada una), *Por refinar* (agrupado por estado), *Tablero del sprint* (columnas del sprint en curso), *Mis tareas* (lo mío del sprint), *Roadmap* (línea de tiempo por milestone) y *Revisión del viernes* (lo hecho esta semana, por persona).
+
+**Vistas del tablero general** (solo para quien coordina y para dirección): avance por proyecto (solo épicas, con porcentaje), carga por persona, bloqueados y cambios de alcance, roadmap general y un Kanban de épicas.
+
+**Milestones.** Su nombre lleva siempre el prefijo `[NOMBRE-DEL-REPO]` para distinguirlos en el tablero general.
+
+**Horas reales.** Se cruzan cada semana con el registro de tiempos; para ello, la descripción de cada entrada de tiempo empieza por el número del ticket, por ejemplo `#57 ...`.
